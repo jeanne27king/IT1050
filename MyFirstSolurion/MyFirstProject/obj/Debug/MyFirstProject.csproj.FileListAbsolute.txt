@@ -1,0 +1,6 @@
+C:\Users\Sean\Desktop\MyFirstSolurion\MyFirstProject\bin\Debug\MyFirstProject.exe.config
+C:\Users\Sean\Desktop\MyFirstSolurion\MyFirstProject\bin\Debug\MyFirstProject.exe
+C:\Users\Sean\Desktop\MyFirstSolurion\MyFirstProject\bin\Debug\MyFirstProject.pdb
+C:\Users\Sean\Desktop\MyFirstSolurion\MyFirstProject\obj\Debug\MyFirstProject.csprojResolveAssemblyReference.cache
+C:\Users\Sean\Desktop\MyFirstSolurion\MyFirstProject\obj\Debug\MyFirstProject.exe
+C:\Users\Sean\Desktop\MyFirstSolurion\MyFirstProject\obj\Debug\MyFirstProject.pdb
