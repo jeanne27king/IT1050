@@ -33,7 +33,7 @@
             System.Console.Write("How tall are you? Feet only 4, 5, 6, 7? ");
             heightFeet = int.Parse(System.Console.ReadLine());
 
-            System.Console.Write("How many additional inches tall are you? ");
+            System.Console.Write("How many inches beyond " + heightFeet + " feet tall are you? ");
             heightInches = double.Parse(System.Console.ReadLine());
 
             totalHeightCM = ((heightFeet * 12) + heightInches) * 2.54;
@@ -47,7 +47,7 @@
             canVote = (age >= 18) && isCitizen;
 
             // +==================================================================================+
-            // | Write the information to the screen.   R2                                        |
+            // | Write the information to the screen.   R3                                        |
             // +==================================================================================+
 
             System.Console.WriteLine();
@@ -56,7 +56,7 @@
             System.Console.WriteLine();
             System.Console.Write("Height: "+(totalHeightCM +" centimeters"));
             System.Console.WriteLine();
-            System.Console.Write("Are you eligible to vote?" + canVote);
+            System.Console.Write("Are you eligible to vote? " + canVote);
             System.Console.WriteLine();
             System.Console.Write("Select any key to end.");
             System.Console.ReadKey();
