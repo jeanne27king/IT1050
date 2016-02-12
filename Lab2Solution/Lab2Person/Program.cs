@@ -12,8 +12,10 @@
 
             System.Console.Write("True or False... Are you married? ");
             maritalStatus = bool.Parse(System.Console.ReadLine());
-            //if marital status is true then create new spouse?
-            p1.SpouseInputData();
+            if (maritalStatus && true)
+            {
+                p1.SpouseInputData();
+            }
             System.Console.WriteLine();
 
 
@@ -24,16 +26,17 @@
             p2.InputPersonData();
             System.Console.Write("True or False... Are you married? ");
             maritalStatus = bool.Parse(System.Console.ReadLine());
-            //if marital status is true then create new spouse?
-            //input spouse firstName, set LastName, and age?
-            p2.SpouseInputData();
+            if (maritalStatus && true)
+            {
+                p2.SpouseInputData();
+            }
             System.Console.WriteLine();
 
             p1.PrintNameandAge();
             //p1spouse.PrintNameandAge();
             p2.PrintNameandAge();
             //p2spouse.PrintNameandAge();
-            System.Console.WriteLine("The Average Age of these people is " + Person.SumOfAllAges / 4 + " years old.");
+            System.Console.WriteLine("The Average Age of these people is " + Person.SumOfAllAges / Person.count + " years old.");
             System.Console.WriteLine();
             
             
