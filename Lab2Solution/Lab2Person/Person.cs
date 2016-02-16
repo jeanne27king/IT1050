@@ -10,7 +10,7 @@
         public static double SumOfAllAges = 0;
         public static int count=0;
 
-        public void InputPersonData()        //invoke method input person firstName, lastName, and age?
+        public void InputPersonData()      //invoke method input person firstName, lastName, and age?
         {
             System.Console.Write("What is your first name? ");
             this.firstName = System.Console.ReadLine();
@@ -44,14 +44,14 @@
         public void PrintNameandAge()   //invoke method print name and age of people
         {
             System.Console.WriteLine(this.GetFullName() + " is " + this.Age + " years old.");
-            //if (this.Spouse = null)
-              //  { 
-                //System.Console.WriteLine(this.GetFullName() + " does not have a spouse.");
-                //}
-            //else
-              //  { 
-               // System.Console.WriteLine(this.Spouse.GetFullName() + " is " + this.Spouse.Age + " years old.");
-                //}
+            if (this.Spouse !=null)     //print name and age of spouse if there is a spouse (spouse not null)
+                {
+                System.Console.WriteLine(this.Spouse.GetFullName() + " is " + this.Spouse.Age + " years old.");
+                }
+            else
+                { 
+                System.Console.WriteLine(this.GetFullName() + " does not have a spouse.");
+                }
         }
     }
 }
