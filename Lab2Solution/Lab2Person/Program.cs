@@ -19,7 +19,7 @@
                 p1.SpouseInputData();
                 }
             System.Console.WriteLine();
-            
+
             //Person 2
             Person p2 = new Person();
             System.Console.WriteLine("Person 2: ");
