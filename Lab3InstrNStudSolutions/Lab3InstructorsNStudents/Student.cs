@@ -1,15 +1,15 @@
 ﻿namespace Lab3InstructorsNStudents
 {
-    class Student
+    public class Student
     {
-        private string Name = null;
+        private string Name;
         private int Grade = 0;
-        private string Teacher = null; 
+        private string Teacher; 
 
-        public Student (string name, string teacher)
+        public Student (string stdntname, string stdntteacher)
         {
-            this.Name = name;
-            this.Teacher = teacher;
+            this.Name = stdntname;
+            this.Teacher = stdntteacher;
         }
 
         //public int SetGrade(int grade)

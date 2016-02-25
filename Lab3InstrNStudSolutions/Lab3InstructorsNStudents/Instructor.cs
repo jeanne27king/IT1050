@@ -1,14 +1,14 @@
 ﻿namespace Lab3InstructorsNStudents
 {
-    class Instructor
+    public class Instructor
     {
-        private string Name = null;
-        private string CourseName = null;
+        private string Name;
+        private string CourseName;
 
-        public Instructor(string name, string coursename)
+        public Instructor(string instrname, string instrcoursename)
         {
-            this.Name = name;
-            this.CourseName = coursename;
+            this.Name = instrname;
+            this.CourseName = instrcoursename;
         }
 
         //public int s1.SetGrade()
