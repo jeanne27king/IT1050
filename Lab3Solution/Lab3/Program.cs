@@ -11,6 +11,19 @@
             Student Joe = new Student("Joe", "John");
             Student Melissa = new Student("Melissa", "Mike");
             Student Matt = new Student("Matt", "Mike");
+
+            John.StudentGrade(Jane, 95);
+            John.StudentGrade(Joe, 85);
+            Mike.StudentGrade(Melissa, 90);
+            Mike.StudentGrade(Matt, 92);
+
+            Jane.PrintStudentInfo();
+            Joe.PrintStudentInfo();
+            Melissa.PrintStudentInfo();
+            Jane.PrintStudentInfo();
+
+            System.Console.ReadKey();
+
         }
     }
 }
