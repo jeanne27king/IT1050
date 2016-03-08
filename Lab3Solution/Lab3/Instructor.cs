@@ -5,10 +5,10 @@
         private string IName;
         private string CourseName;
 
-        public Instructor(string instName, string instCourseName)
+        public Instructor(string iname, string instcoursname)
         {
-            this.IName = instName;
-            this.CourseName = instCourseName;
+            this.IName = iname;
+            this.CourseName = instcoursname;
         }
 
         public void StudentGrade(Student stname, int grade)
@@ -16,9 +16,9 @@
             stname.SetStudentGrade(grade);
         }
 
-        public void PrintInstructorInfo(Instructor instname)
+        public void PrintInstructorInfo()
         {
-           return this.IName + " and they teach "+ this.CourseName);
+            System.Console.Write("My " + this.CourseName + " Instructor is " + this.IName);
         }
     }
 }

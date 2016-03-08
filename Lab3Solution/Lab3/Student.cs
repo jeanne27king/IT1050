@@ -2,14 +2,14 @@
 {
     public class Student
     {
-        private string Name;
-        private string Instrctr;
+        private string SName;
+        private Instructor Instrctr;
         private int Grade=0;
 
-        public Student(string stname, string stinstructor)
+        public Student(string stname, Instructor instrctr)
         {
-            this.Name = stname;
-            this.Instrctr = stinstructor;
+            this.Instrctr = instrctr;
+            this.SName = stname;
         }
 
         public void SetStudentGrade(int grade)
@@ -19,10 +19,9 @@
 
         public void PrintStudentInfo()
         {
-            string instname = this.Instrctr;
-            System.Console.WriteLine("My Name is " + this.Name);
-            Instructor.PrintInstructorInfo(this.Instrctr);
-            System.Console.WriteLine(" and I have a " + this.Grade);
+            System.Console.WriteLine("My Name is " + this.SName + ".");
+            this.Instrctr.PrintInstructorInfo();
+            System.Console.WriteLine(" and I have a " + this.Grade + ".");
             System.Console.WriteLine();
 
         }

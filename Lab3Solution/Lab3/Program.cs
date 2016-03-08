@@ -7,10 +7,10 @@
             Instructor John = new Instructor("John", "English");
             Instructor Mike = new Instructor("Mike", "Math");
 
-            Student Jane = new Student("Jane", "John");
-            Student Joe = new Student("Joe", "John");
-            Student Melissa = new Student("Melissa", "Mike");
-            Student Matt = new Student("Matt", "Mike");
+            Student Jane = new Student("Jane", John);
+            Student Joe = new Student("Joe", John);
+            Student Melissa = new Student("Melissa", Mike);
+            Student Matt = new Student("Matt", Mike);
 
             John.StudentGrade(Jane, 95);
             John.StudentGrade(Joe, 85);
@@ -20,7 +20,7 @@
             Jane.PrintStudentInfo();
             Joe.PrintStudentInfo();
             Melissa.PrintStudentInfo();
-            Jane.PrintStudentInfo();
+            Matt.PrintStudentInfo();
 
             System.Console.ReadKey();
 
