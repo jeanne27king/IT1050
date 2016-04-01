@@ -6,23 +6,23 @@
         {   
             double totalCost=0;
 
-            //Create Customer Ticket, Concessions and Discount
+            System.Console.WriteLine("Welcome to our Theater...");
+
+            //Create Customer Ticket
             CstmrTicket c1 = new CstmrTicket();
-            Concession cc1 = new Concession();
-            //Discounts cd1 = new Discounts();
 
-            //Create Customer Ticket Sales
-            c1.calculateTicket(); 
-        
-            //Create Customer Concession Order
-            cc1.calculateConcession();
+            //Concession Order
+            c1.GetConcessionOrder();
 
-            //Calculate Discount;
-            //cd1.calculateDiscount();
+            //Calculate Concession Order
+            totalCost += c1.calculateConcession();
 
-            //Calculate Total Cost
-            totalCost = c1.ticketCost + cc1.consTotal;
-            System.Console.WriteLine("Your Total Bill Today is " + totalCost);
+            //Calculate Discount
+            totalCost -= c1.calculateDiscount();
+
+            //Calculate Customer Ticket Sales
+            totalCost += c1.calculateTicket();
+            System.Console.WriteLine("Your Total Bill Today is $" + totalCost);
             System.Console.Write("Press any key to complete your order!");
             System.Console.ReadKey();
         }
