@@ -1,6 +1,6 @@
 ﻿namespace Lab4Movies
 {
-    class Orders
+    class Order
     {
         public static bool AskforShowtime()
         {
