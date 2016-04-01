@@ -5,6 +5,7 @@ namespace Lab4Movies
     {
         public bool showTime;
 
+        //Concessions quantities
         public int qsSoda;
         public int qlSoda;
         public int qhDog;
@@ -12,10 +13,13 @@ namespace Lab4Movies
         public int qcandy;
         public double qconsTotal;
 
+        //Movie ticket quantities
         public int cChild;
         public int cAdult;
         public int cSenior;
         public int totalPeople;
+
+        //Costs
         public double ticketCost;
         public double consTotal;
         public double discount;
@@ -23,16 +27,16 @@ namespace Lab4Movies
         public CstmrTicket()
         {
             //True is matinee, false is evening 
-            this.showTime = Pricing.AskforShowtime();
+            this.showTime = Order.AskforShowtime();
 
             //Number of seniors attending
-            this.cSenior = Pricing.AskForPerson("seniors");
+            this.cSenior = Order.AskForPerson("seniors");
 
             //Number of adults attending
-            this.cAdult = Pricing.AskForPerson("adults");
+            this.cAdult = Order.AskForPerson("adults");
 
             //Number of children attending
-            this.cChild = Pricing.AskForPerson("children");
+            this.cChild = Order.AskForPerson("children");
             System.Console.WriteLine();
 
             //Count number of people to be used for the discount
@@ -42,11 +46,11 @@ namespace Lab4Movies
         public void GetConcessionOrder()
         {
             System.Console.WriteLine("Please Place Your Concession Order...");
-            this.qsSoda = Pricing.AskforInt("small soda's");
-            this.qlSoda = Pricing.AskforInt("large soda 's");
-            this.qhDog = Pricing.AskforInt("hot dog's");
-            this.qpCorn = Pricing.AskforInt("popcorn");
-            this.qcandy = Pricing.AskforInt("candy");
+            this.qsSoda = Order.AskforInt("small soda's");
+            this.qlSoda = Order.AskforInt("large soda 's");
+            this.qhDog = Order.AskforInt("hot dog's");
+            this.qpCorn = Order.AskforInt("popcorn");
+            this.qcandy = Order.AskforInt("candy");
         }
 
         //total concession cost
@@ -67,25 +71,38 @@ namespace Lab4Movies
         public double calculateDiscount()
         {
             discount = 0;
-            if (this.qpCorn > 0 & this.qlSoda > 0 & this.totalPeople>0)
+            if (this.qpCorn > 0 && this.qlSoda > 0 && this.qpCorn>=this.qlSoda && this.qlSoda<=this.totalPeople && this.totalPeople > 0)
             {
-                discount += 2;
-             }
-
-            if (this.showTime=false & this.totalPeople > 2)
+               discount += 2 * qlSoda;
+            }
+            else if (this.qpCorn > 0 && this.qlSoda > 0 && this.qpCorn >= this.qlSoda && this.qlSoda >= this.totalPeople && this.totalPeople > 0)
             {
-                 System.Console.WriteLine("Please have a free popcorn!");
+               discount += 2 * this.totalPeople;
             }
 
-            if (qcandy > 3)
+            if (this.qpCorn > 0 && this.qlSoda > 0 && this.qpCorn < this.qlSoda && this.qpCorn<=this.totalPeople && this.totalPeople > 0)
             {
-                int x = qcandy / 3;
-                System.Console.WriteLine("Please may have " + x + " free candy!");
+                discount += 2 * qpCorn;
             }
-            System.Console.WriteLine("Your discount is $" + discount);
-            return discount;
-        }
+            else if (this.qpCorn > 0 && this.qlSoda > 0 && this.qpCorn < this.qlSoda && this.qpCorn >= this.totalPeople && this.totalPeople > 0)
+            {
+                discount += 2 * this.totalPeople;
+            }
 
+            if (this.showTime == false && this.totalPeople > 2)
+                {
+                    System.Console.WriteLine("Please may have a free popcorn!");
+                }
+
+                if (qcandy > 3)
+                {
+                    int x = qcandy / 3;
+                    System.Console.WriteLine("Please may have " + x + " free candy!");
+                }
+                System.Console.WriteLine("Your discount is $" + discount);
+                return discount;
+            }
+        
          //total ticket cost
         public double calculateTicket()
         {
@@ -95,7 +112,7 @@ namespace Lab4Movies
                 ticketCost += this.cSenior * Pricing.mSenior;
                 ticketCost += this.cAdult * Pricing.mAdult;
                 ticketCost += this.cChild * Pricing.mChild;
-                System.Console.WriteLine("Your Tickets will Cost $" + ticketCost);
+                System.Console.WriteLine("Your Movie Tickets will Cost $" + ticketCost);
                 System.Console.WriteLine();
                 return ticketCost;
             }
@@ -110,7 +127,6 @@ namespace Lab4Movies
 
                 return ticketCost;
             }
-
         }
     }
 }
