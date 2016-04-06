@@ -71,39 +71,44 @@ namespace Lab4Movies
         public double calculateDiscount()
         {
             discount = 0;
-            if (this.qpCorn > 0 && this.qlSoda > 0 && this.qpCorn>=this.qlSoda && this.qlSoda<=this.totalPeople && this.totalPeople > 0)
+            if (this.totalPeople > 0)
             {
-               discount += 2 * qlSoda;
-            }
-            else if (this.qpCorn > 0 && this.qlSoda > 0 && this.qpCorn >= this.qlSoda && this.qlSoda >= this.totalPeople && this.totalPeople > 0)
-            {
-               discount += 2 * this.totalPeople;
-            }
-
-            if (this.qpCorn > 0 && this.qlSoda > 0 && this.qpCorn < this.qlSoda && this.qpCorn<=this.totalPeople && this.totalPeople > 0)
-            {
-                discount += 2 * qpCorn;
-            }
-            else if (this.qpCorn > 0 && this.qlSoda > 0 && this.qpCorn < this.qlSoda && this.qpCorn >= this.totalPeople && this.totalPeople > 0)
-            {
-                discount += 2 * this.totalPeople;
+                if (this.qpCorn > 0 && this.qlSoda > 0)
+                {
+                    if (this.qpCorn >= this.qlSoda && this.qlSoda <= this.totalPeople)
+                    {
+                        discount += 2 * qlSoda;
+                    }
+                    else if (this.qpCorn >= this.qlSoda && this.qlSoda >= this.totalPeople)
+                    {
+                        discount += 2 * this.totalPeople;
+                    }
+                    else if (this.qpCorn < this.qlSoda && this.qpCorn <= this.totalPeople)
+                    {
+                        discount += 2 * qpCorn;
+                    }
+                    else if (this.qpCorn < this.qlSoda && this.qpCorn >= this.totalPeople)
+                    {
+                        discount += 2 * this.totalPeople;
+                    }
+                }
             }
 
             if (this.showTime == false && this.totalPeople > 2)
-                {
-                    System.Console.WriteLine("Please may have a free popcorn!");
-                }
-
-                if (qcandy > 3)
-                {
-                    int x = qcandy / 3;
-                    System.Console.WriteLine("Please may have " + x + " free candy!");
-                }
-                System.Console.WriteLine("Your discount is $" + discount);
-                return discount;
+            {
+                System.Console.WriteLine("Please may have a free popcorn!");
             }
-        
-         //total ticket cost
+
+            if (qcandy > 3)
+            {
+                int x = qcandy / 3;
+                System.Console.WriteLine("Please may have " + x + " free candy!");
+            }
+            System.Console.WriteLine("Your discount is $" + discount);
+            return discount;
+        }
+
+        //total ticket cost
         public double calculateTicket()
         {
             if (this.showTime == true)
