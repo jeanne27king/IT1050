@@ -16,5 +16,12 @@
             totalStudents = int.Parse(System.Console.ReadLine());
             return totalStudents;
         }
+
+        public void printCourseInfo()
+        {
+            System.Console.WriteLine("The Course Title is " + cName);
+            System.Console.WriteLine("The Course Number is " + crnNumber);
+            System.Console.WriteLine("There are " + totalStudents + " students in the Course.");
+        }
     }
 }
