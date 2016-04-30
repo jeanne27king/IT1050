@@ -6,6 +6,7 @@
         public int crnNumber;
         public int totalStudents;
 
+        //Enter Course Information
         public int getCourseInfo()
         {
             System.Console.Write("What is the name of your Course: ");
@@ -17,11 +18,12 @@
             return totalStudents;
         }
 
+        //Print Course Information
         public void printCourseInfo()
         {
-            System.Console.WriteLine("The Course Title is " + cName);
-            System.Console.WriteLine("The Course Number is " + crnNumber);
-            System.Console.WriteLine("There are " + totalStudents + " students in the Course.");
+            System.Console.WriteLine("Course Title:  " + cName);
+            System.Console.WriteLine("Course Number:  " + crnNumber);
+            System.Console.WriteLine("Total Students:  " + totalStudents);
         }
     }
 }
