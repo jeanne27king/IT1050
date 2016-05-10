@@ -17,31 +17,31 @@ namespace FinalExamination
             Occupants = new Passenger[maxOccupants];
         }
 
-       public void AddOccupants(Passenger passenger, int index)
-       {
+        public void AddOccupants(Passenger passenger, int index)
+        {
             Occupants[index].GetName();
             Occupants[index].GetWeight();
-       }
+        }
 
         public double GetCurrentWeight(int index)
         {
-           for (int i=0; i<index; i++)
-          {
+            for (int i = 0; i < index; i++)
+            {
                 double totalWeight = 0;
                 totalWeight += Occupants[i].GetWeight();
-                return totalWeight;  
-           }
+                return totalWeight;
+            }
         }
         public bool IsOverMaxCapacity(double getCurrentWeight)
         {
             if (getCurrentWeight > MaxWeight)
             {
-               return true;
-           }
-          else
-          {
-            return false;
-           }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
